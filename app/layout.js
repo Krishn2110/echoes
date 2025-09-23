@@ -1,14 +1,18 @@
-import { Geist, Geist_Mono } from "next/font/google";
+
+import localFont from "next/font/local";
 import "./globals.css";
+import { LoadingProvider } from './context/LoadingContext';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const DeliusRegular = localFont({
+  src: [
+    {
+      path: "fonts/Delius-Regular.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-delius-regular",
+  display: "swap",
 });
 
 export const metadata = {
@@ -19,10 +23,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${DeliusRegular.variable} font-sans antialiased`}>
+        <LoadingProvider>
+        {/* <Navbar /> */}
+   
+          {children}
+        
+        </LoadingProvider>
       </body>
     </html>
   );
