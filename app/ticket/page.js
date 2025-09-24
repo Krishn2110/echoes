@@ -376,7 +376,7 @@ const BuyTicketsPage = () => {
 
                 <div className="text-center">
                   <button onClick={handleProceedToDetails} className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-bold hover:opacity-90 transition-opacity text-lg">
-                    Verify Payment
+                    Submit
                   </button>
                   <p className="text-gray-400 text-sm mt-3">* All fields are mandatory</p>
                 </div>

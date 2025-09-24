@@ -75,11 +75,10 @@ const CulturalFestPage = () => {
   }, []);
 
   const socialIcons = [
-  { icon: <FaFacebookF size={28}/>, name: 'Facebook' },
-  { icon: <FaTwitter size={28}/>, name: 'Twitter' },
-  { icon: <FaInstagram size={28}/>, name: 'Instagram' },
-  { icon: <FaLinkedinIn size={28}/>, name: 'LinkedIn' },
-  { icon: <FaYoutube size={28}/>, name: 'YouTube' },
+  { icon: <FaFacebookF size={28}/>, name: 'Facebook', link: 'https://www.instagram.com/saciitram' },
+  { icon: <FaInstagram size={28}/>, name: 'Instagram',  link: 'https://www.instagram.com/saciitram'},
+  { icon: <FaLinkedinIn size={28}/>, name: 'LinkedIn', link: 'https://www.instagram.com/saciitram '},
+  { icon: <FaYoutube size={28}/>, name: 'YouTube' , link: 'https://www.instagram.com/saciitram'},
 ];
 
   // Event data for cultural fest
@@ -330,6 +329,7 @@ const CulturalFestPage = () => {
           className="flex flex-col items-center gap-6"
         >
           {/* Schedule Button */}
+
           <motion.button
             onClick={() => setIsScheduleOpen(true)}
             className="px-8 py-3 text-lg cursor-pointer rounded-full font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-white"
@@ -338,6 +338,17 @@ const CulturalFestPage = () => {
           >
             View Schedule
           </motion.button>
+
+<Link href={'./stalls'}>
+          <motion.button
+            
+            className="px-8 py-3 text-lg cursor-pointer rounded-full font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-white"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Stalls Registration
+          </motion.button>
+          </Link>
           
           
         </motion.div>
@@ -602,6 +613,7 @@ const CulturalFestPage = () => {
           {socialIcons.map((social, index) => (
             <motion.div 
               key={index} 
+              href={social.link}
               className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center cursor-pointer"
               whileHover={{ 
                 scale: 1.1,
@@ -609,6 +621,7 @@ const CulturalFestPage = () => {
               }}
               style={{color: '#E55EA2'}}
               title={social.name}
+              
             >
               {social.icon}
             </motion.div>
